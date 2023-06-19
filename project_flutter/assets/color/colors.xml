@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="k4d92fb">#4d92fb</color>
+    <color name="k686868">#686868</color>
+    <color name="kd0d0d0">#d0d0d0</color>
+    <color name="kf0f0f0">#f0f0f0</color>
+    <color name="k2bb62b">#2bb62b</color>
+    <color name="kda4848">#da4848</color>
+    <color name="k000000">#000000</color>
+    <color name="kffffff">#ffffff</color>
+    <color name="ka0a0a0">#a0a0a0</color>
+    <color name="ke8e8e8">#e8e8e8</color>
+    <color name="kf3495b">#f3495b</color>
+    <color name="k2b2b2b">#2b2b2b</color>
+    <color name="kdddddd">#dddddd</color>
+    <color name="k33f3495b">#33f3495b</color>
+    <color name="k052BB62B">#052BB62B</color>
+    <color name="kCC000000">#CC000000</color>
+</resources>
