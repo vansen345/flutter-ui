@@ -10,9 +10,9 @@
 class FontFamily {
   FontFamily._();
 
-  /// Font family: AppIcons
-  static const String appIcons = 'AppIcons';
-
   /// Font family: Inter
   static const String inter = 'Inter';
+
+  /// Font family: VSIcons
+  static const String vSIcons = 'VSIcons';
 }

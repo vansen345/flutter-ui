@@ -33,10 +33,6 @@ class $AssetsRiveGen {
   List<String> get values => [success];
 }
 
-class $AssetsSvgGen {
-  const $AssetsSvgGen();
-}
-
 class Assets {
   Assets._();
 
@@ -44,7 +40,6 @@ class Assets {
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const String prod = 'assets/prod.env';
   static const $AssetsRiveGen rive = $AssetsRiveGen();
-  static const $AssetsSvgGen svg = $AssetsSvgGen();
 
   /// List of all assets
   List<String> get values => [dev, prod];
