@@ -9,16 +9,16 @@ AppBar customAppBar({
   return AppBar(
     titleSpacing: 0,
     centerTitle: false,
-    foregroundColor: AppColors.ka0a0a0,
+    foregroundColor: VSColors.ka0a0a0,
     title: Text(
       title,
       style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
     ),
     leading: IconButton(
       icon: const Icon(
-        AppIcons.back,
+        VSIcons.back,
       ),
-      color: AppColors.k4d92fb,
+      color: VSColors.k4d92fb,
       iconSize: 16,
       onPressed: onPressed,
     ),

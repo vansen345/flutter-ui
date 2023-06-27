@@ -25,7 +25,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return VxCapsule(
       height: height,
-      backgroundColor: AppColors.k4d92fb,
+      backgroundColor: VSColors.k4d92fb,
       child: HStack(
         [
           title!.tr.text.size(16).color(textColor).bold.makeCentered(),
