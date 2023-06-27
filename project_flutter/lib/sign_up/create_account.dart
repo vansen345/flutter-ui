@@ -25,7 +25,7 @@ class CreateAccountScreen extends StatelessWidget {
             const HeightBox(13),
             "Welcom to PiepMARK, let's sign you up"
                 .text
-                .color(AppColors.k686868)
+                .color(VSColors.k686868)
                 .size(14)
                 .make(),
             const HeightBox(34),
@@ -50,14 +50,9 @@ class CreateAccountScreen extends StatelessWidget {
 Widget haveAccount() {
   return HStack(
     [
-      'Already have account?'
-          .text
-          .size(14)
-          .color(AppColors.k686868)
-          .bold
-          .make(),
+      'Already have account?'.text.size(14).color(VSColors.k686868).bold.make(),
       const WidthBox(5),
-      'Login'.text.color(AppColors.k4d92fb).size(14).bold.make()
+      'Login'.text.color(VSColors.k4d92fb).size(14).bold.make()
     ],
   );
 }
