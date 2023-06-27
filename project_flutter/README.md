@@ -14,3 +14,21 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Command
+- To build models, use this command
+
+```
+dart run build_runner build --delete-conflicting-outputs
+
+``` 
+
+- To generate font from svg icon (tất cả svg đều phải cùng chiều cao)
+
+```
+dart run icon_font_generator --from=assets/icons \
+  --class-name=Icomoon \
+  --out-font=assets/fonts/Icomoon/icomoon.ttf \
+  --out-flutter=lib/icon/icons.dart
+  
+```

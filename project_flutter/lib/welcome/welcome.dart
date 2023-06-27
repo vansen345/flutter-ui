@@ -29,16 +29,16 @@ class WelcomeScreen extends StatelessWidget {
             'Let shopping'
                 .text
                 .size(14)
-                .color(AppColors.k686868)
+                .color(VSColors.k686868)
                 .make()
                 .centered(),
             const HeightBox(13),
             const CustomButton(
-              background: AppColors.k4d92fb,
+              background: VSColors.k4d92fb,
               title: 'Get start',
               textColor: Colors.white,
               radius: 5,
-              icon: AppIcons.next,
+              icon: VSIcons.next,
             ).onTap(
               () => Get.toNamed(Routes.createAccount),
             )

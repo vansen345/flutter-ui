@@ -86,7 +86,7 @@ flutter_gen:
     inputs:
       - assets/color/colors.xml
     outputs:
-      class_name: AppColors
+      class_name: VSColors
 
 # The following section is specific to Flutter packages.
 flutter:
@@ -123,7 +123,7 @@ flutter:
           weight: 600
         - asset: assets/fonts/Inter/Inter-Bold.ttf
           weight: 700
-    - family: AppIcons
+    - family: VSIcons
       fonts:
         - asset: assets/fonts/AppIcons/App-Icons.ttf
   #

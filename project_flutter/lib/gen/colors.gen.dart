@@ -10,8 +10,8 @@
 import 'package:flutter/painting.dart';
 import 'package:flutter/material.dart';
 
-class AppColors {
-  AppColors._();
+class VSColors {
+  VSColors._();
 
   /// Color: #000000
   static const Color k000000 = Color(0xFF000000);
