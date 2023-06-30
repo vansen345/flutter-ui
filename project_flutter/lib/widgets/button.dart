@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:vansen/gen/colors.gen.dart';
-import 'package:vansen/icon/icons.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class CustomButton extends StatelessWidget {
