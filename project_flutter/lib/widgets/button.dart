@@ -28,7 +28,7 @@ class CustomButton extends StatelessWidget {
       backgroundColor: VSColors.k4d92fb,
       child: HStack(
         [
-          title!.tr.text.size(16).color(textColor).bold.makeCentered(),
+          title!.text.size(16).color(textColor).bold.makeCentered(),
           const WidthBox(10),
           Icon(
             icon,
