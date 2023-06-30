@@ -11,7 +11,9 @@ class InputLogin extends StatefulWidget {
       this.isShowPass,
       this.isPassword,
       this.textEditingController,
-      this.colorBorder});
+      this.colorBorder,
+      required this.onChanged,
+      this.errorMessage});
 
   final String? placeHolder;
   final bool? isShow;
@@ -19,6 +21,8 @@ class InputLogin extends StatefulWidget {
   final Color? colorBorder;
   final bool? isPassword;
   final TextEditingController? textEditingController;
+  final Function(String) onChanged;
+  final String? errorMessage;
   @override
   State<InputLogin> createState() => _InputLogin();
 }
@@ -38,29 +42,46 @@ class _InputLogin extends State<InputLogin> {
       textInputAction: TextInputAction.search,
       controller: widget.textEditingController,
       keyboardType: TextInputType.visiblePassword,
-      onChanged: (value) {
-        // onChanged!(value);
-      },
+      onChanged: widget.onChanged,
       obscuringCharacter: '•',
       obscureText: widget.isShowPass! ? false : obscured,
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.all(15),
-        enabledBorder: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(
+        // enabledBorder: const OutlineInputBorder(
+        //   borderRadius: BorderRadius.all(
+        //     Radius.circular(15),
+        //   ),
+        //   borderSide: BorderSide(
+        //     color: VSColors.ke8e8e8,
+        //     width: 2,
+        //   ),
+        // ),
+        // focusedBorder: const OutlineInputBorder(
+        //   borderRadius: BorderRadius.all(
+        //     Radius.circular(15),
+        //   ),
+        //   borderSide: BorderSide(
+        //     color: VSColors.ke8e8e8,
+        //     width: 2,
+        //   ),
+        // ),
+        errorText: widget.errorMessage,
+        errorBorder: OutlineInputBorder(
+          borderRadius: const BorderRadius.all(
             Radius.circular(15),
           ),
           borderSide: BorderSide(
-            color: VSColors.ke8e8e8,
             width: 2,
+            color: widget.colorBorder!,
           ),
         ),
-        focusedBorder: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: const BorderRadius.all(
             Radius.circular(15),
           ),
           borderSide: BorderSide(
-            color: VSColors.ke8e8e8,
             width: 2,
+            color: widget.colorBorder!,
           ),
         ),
         suffixIcon: widget.isShow!
@@ -80,69 +101,3 @@ class _InputLogin extends State<InputLogin> {
     );
   }
 }
-
-// class InputLogin extends StatefulWidget {
-//     const InputLogin({Key? key}) : super(key: key);
-
-//     @override
-    
-// }
-
-//   final Function(String)? onChanged;
-//   final TextEditingController? textEditingController;
-//   final String? placeHolder;
-//   final bool? isShow;
-//   final bool? isPassword;
-//   final IconData? icon;
-//   final bool? obscureText;
-//   final VoidCallback? onChange;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return TextField(
-//       textInputAction: TextInputAction.search,
-//       controller: textEditingController,
-//       keyboardType: TextInputType.visiblePassword,
-//       onChanged: (value) {
-//         // onChanged!(value);
-//       },
-//       obscuringCharacter: '*',
-//       obscureText: true,
-//       decoration: InputDecoration(
-//         contentPadding: const EdgeInsets.all(15),
-//         enabledBorder: const OutlineInputBorder(
-//           borderRadius: BorderRadius.all(
-//             Radius.circular(15),
-//           ),
-//           borderSide: BorderSide(
-//             color: VSColors.ke8e8e8,
-//             width: 2,
-//           ),
-//         ),
-//         focusedBorder: const OutlineInputBorder(
-//           borderRadius: BorderRadius.all(
-//             Radius.circular(15),
-//           ),
-//           borderSide: BorderSide(
-//             color: VSColors.ke8e8e8,
-//             width: 2,
-//           ),
-//         ),
-//         suffixIcon: isShow!
-//             ? Icon(
-//                 icon,
-//               ).onTap(onChange)
-//             : const SizedBox.shrink(),
-//         hintStyle: const TextStyle(
-//           fontSize: 15,
-//           fontWeight: FontWeight.w500,
-//           color: VSColors.ka0a0a0,
-//         ),
-//         hintText: placeHolder ?? '',
-//         fillColor: Colors.white,
-//       ),
-//     );
-//   }
-
- 
-// }
