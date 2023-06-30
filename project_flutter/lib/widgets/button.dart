@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:vansen/gen/colors.gen.dart';
-import 'package:vansen/icon/icons.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class CustomButton extends StatelessWidget {
@@ -28,7 +26,7 @@ class CustomButton extends StatelessWidget {
       backgroundColor: VSColors.k4d92fb,
       child: HStack(
         [
-          title!.tr.text.size(16).color(textColor).bold.makeCentered(),
+          title!.text.size(16).color(textColor).bold.makeCentered(),
           const WidthBox(10),
           Icon(
             icon,

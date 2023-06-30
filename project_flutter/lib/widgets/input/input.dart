@@ -3,15 +3,18 @@ import 'package:vansen/gen/colors.gen.dart';
 import 'package:vansen/icon/icons.dart';
 
 class InputSearch extends StatelessWidget {
-  const InputSearch(
-      {super.key,
-      required this.textEditingController,
-      required this.onChanged,
-      this.color});
+  const InputSearch({
+    super.key,
+    this.textEditingController,
+    required this.onChanged,
+    this.isLogin,
+    this.color,
+  });
 
   final Function(String) onChanged;
   final Color? color;
-  final TextEditingController textEditingController;
+  final TextEditingController? textEditingController;
+  final bool? isLogin;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +28,7 @@ class InputSearch extends StatelessWidget {
         fontSize: 14,
       ),
       onChanged: (value) {
-        onChanged;
+        onChanged(value);
       },
       decoration: const InputDecoration(
         isDense: true,

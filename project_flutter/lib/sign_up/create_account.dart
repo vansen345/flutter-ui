@@ -12,7 +12,7 @@ class CreateAccountScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(
+      appBar: appbarScreen(
         title: 'Welcome',
         onPressed: () => Get.back(),
       ),
@@ -29,12 +29,13 @@ class CreateAccountScreen extends StatelessWidget {
                 .size(14)
                 .make(),
             const HeightBox(34),
-            const CustomButton(
-              title: 'Sign up',
+            CustomButton(
+              title: 'Sign up'.tr,
               textColor: Colors.white,
             ).onTap(
               () {
                 Get.toNamed(Routes.signUpCountry);
+                // Get.toNamed(Routes.demo);
               },
             ),
             const HeightBox(13),
@@ -52,7 +53,12 @@ Widget haveAccount() {
     [
       'Already have account?'.text.size(14).color(VSColors.k686868).bold.make(),
       const WidthBox(5),
-      'Login'.text.color(VSColors.k4d92fb).size(14).bold.make()
+      'Login'.text.color(VSColors.k4d92fb).size(14).bold.make().onDoubleTap(
+        () {
+          Get.toNamed(Routes.login);
+        },
+      )
     ],
   );
 }
+//  Get.toNamed(Routes.login);

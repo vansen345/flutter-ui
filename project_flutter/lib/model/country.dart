@@ -18,6 +18,8 @@ class CountryModel {
     this.sv502,
   });
 
+  String getName() => (sv501 ?? '').toLowerCase();
+
   factory CountryModel.fromJson(Map<String, dynamic>? json) =>
       _$CountryModelFromJson(json ?? {});
 
