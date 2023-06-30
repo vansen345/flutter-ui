@@ -5,12 +5,12 @@ import 'package:vansen/model/country.dart';
 import 'package:vansen/utils/utils.dart';
 
 class SignUpViewModel extends GetxController {
-  var isSelectCountryShow = false.obs;
   var countrySelect = Rxn<CountryModel>();
   var selectedIndex = 0.obs;
-  var result = <CountryModel>[].obs;
+  var listCountry = <CountryModel>[].obs;
+  var listSearch = <CountryModel>[].obs;
   final debouncer = Debouncer(delay: const Duration(seconds: 1));
-  var countries = [
+  final data = [
     CountryModel(
       sv501: 'Australia',
       sv502: 'https://d1yr3mzis030jk.cloudfront.net/piepme-sys/au.png',
@@ -47,49 +47,37 @@ class SignUpViewModel extends GetxController {
       sv501: 'Vietnam',
       sv502: "https://d1yr3mzis030jk.cloudfront.net/piepme-sys/vn.png",
     ),
-  ].obs;
+  ];
   final textEditingController = TextEditingController();
 
   @override
   void onInit() {
     getListCountry();
-    triggerSearch();
     super.onInit();
-
-    // textEditingController.addListener(() {
-    //   if (textEditingController.text.isEmpty) {
-    //     result.value = countries;
-    //   }
-    // });
-  }
-
-  triggerSearch() {
-    String text = textEditingController.text;
-    result.value = countries
-        .where(
-          (CountryModel country) => (country.sv501 ?? '').contains(
-            text,
-          ),
-        )
-        .toList();
-    printWrapped('${text}');
   }
 
   getListCountry() {
-    final response = countries;
-    if (response.isNotEmpty) {
-      result = countries;
-    }
+    listCountry.value = data;
+    listSearch.value = listCountry;
   }
 
-  onSelectCountryShow(bool isShow) {
-    isSelectCountryShow.value = isShow;
+  triggerSearch(String text) {
+    if (text.isEmpty) {
+      listSearch.value = listCountry;
+    }
+
+    listSearch.value = listCountry
+        .where(
+          (CountryModel country) => country.getName().contains(
+                text.toLowerCase(),
+              ),
+        )
+        .toList();
   }
 
   onUpdateCountry(CountryModel country, int index) {
     selectedZone(index);
     countrySelect.value = country;
-    onSelectCountryShow(false);
   }
 
   selectedZone(int index) {

@@ -5,7 +5,7 @@ import 'package:vansen/sign_up/country_item.dart';
 import 'package:vansen/sign_up/sign_up_view_model.dart';
 import 'package:vansen/widgets/app_bar.dart';
 import 'package:vansen/widgets/button.dart';
-import 'package:vansen/widgets/input.dart';
+import 'package:vansen/widgets/input/input.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class SignUpCountry extends GetView<SignUpViewModel> {
@@ -17,7 +17,7 @@ class SignUpCountry extends GetView<SignUpViewModel> {
   Widget build(BuildContext context) {
     Get.put(SignUpViewModel());
     return Scaffold(
-      appBar: customAppBar(
+      appBar: appbarScreen(
         title: 'Home',
         onPressed: () => Get.back(),
       ),
@@ -38,26 +38,28 @@ class SignUpCountry extends GetView<SignUpViewModel> {
               InputSearch(
                 textEditingController: controller.textEditingController,
                 onChanged: (value) {
-                  controller.triggerSearch();
+                  controller.triggerSearch(value);
                 },
               ),
               Expanded(
-                child: ListView.separated(
-                  itemBuilder: (context, index) {
-                    return Obx(
-                      () => CountryItem(
-                        country: controller.result[index],
-                        onActionCountry: () => controller.onUpdateCountry(
-                            controller.result[index], index),
-                        isSelected: controller.selectedIndex.value == index,
-                      ),
-                    );
-                  },
-                  separatorBuilder: (context, index) => Container(
-                    height: 1,
-                    color: VSColors.kdddddd,
+                child: Obx(
+                  () => ListView.separated(
+                    itemBuilder: (context, index) {
+                      return Obx(
+                        () => CountryItem(
+                          country: controller.listSearch[index],
+                          onActionCountry: () => controller.onUpdateCountry(
+                              controller.listSearch[index], index),
+                          isSelected: controller.selectedIndex.value == index,
+                        ),
+                      );
+                    },
+                    separatorBuilder: (context, index) => Container(
+                      height: 1,
+                      color: VSColors.kdddddd,
+                    ),
+                    itemCount: controller.listSearch.length,
                   ),
-                  itemCount: controller.result.length,
                 ),
               ),
               const CustomButton(

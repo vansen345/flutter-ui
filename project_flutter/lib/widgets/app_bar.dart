@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:vansen/gen/colors.gen.dart';
 import 'package:vansen/icon/icons.dart';
 
-AppBar customAppBar({
+AppBar appbarScreen({
   String title = "Title",
   VoidCallback? onPressed,
 }) {
